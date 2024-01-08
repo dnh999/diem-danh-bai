@@ -22,6 +22,7 @@ export default function Home() {
     // console.log(trochoi);
     setPlaying(true);
   };
+  
   return (
     <main className={styles.main}>
       {!playing ? (

@@ -45,6 +45,7 @@ const ChiTietTroChoi = (props: Props) => {
     setNguoiChoi(nguoiChoi);
     setHienThemVanChoi(false);
   };
+  document.documentElement.requestFullscreen();
   return (
     <div className={styles.container}>
       <ThanhTongDiem BangDiem={nguoiChoi} />
