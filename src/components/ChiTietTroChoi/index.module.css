@@ -1,0 +1,17 @@
+.container {
+  height: 100vh;
+  overflow: hidden;
+  position: relative;
+}
+
+.LichSuChoi {
+  background: linear-gradient(
+      to bottom,
+      transparent,
+      rgb(var(--background-end-rgb))
+    )
+    rgb(var(--background-start-rgb));
+  height: calc(100vh - 130px);
+  /* padding: 1px 0; */
+  overflow: auto;
+}

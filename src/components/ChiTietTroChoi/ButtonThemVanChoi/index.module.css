@@ -1,0 +1,19 @@
+.wrapper{
+  border-radius: 50%;
+  width: 50px;
+  aspect-ratio: 1/1;
+  background-color: #e4861b;
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.wrapper *{
+  color: white;
+  width: 30px;
+  aspect-ratio: 1/1;
+}

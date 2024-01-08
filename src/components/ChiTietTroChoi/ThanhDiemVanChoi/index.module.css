@@ -1,0 +1,45 @@
+.container {
+  position: relative;
+  padding: 3px 0;
+  background-color: white;
+  margin: 1px 0;
+}
+
+.STT {
+  position: absolute;
+  left: 0;
+  border-radius: 0 5px 5px 0;
+  min-width: 1.5rem;
+}
+
+.ThoiGian {
+  position: absolute;
+  right: 0;
+  border-radius: 5px 0 0 5px;
+  min-width: 3rem;
+}
+
+.STT,
+.ThoiGian {
+  top: 3px;
+  background-color: #666;
+  color: white;
+  padding: 3px 5px;
+  font-size: 0.8rem;
+  text-align: center;
+}
+
+.wrapper {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-end;
+  justify-content: space-around;
+  height: 50px;
+}
+
+.wrapper > div {
+  min-width: 50px;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+}

@@ -1,0 +1,128 @@
+.container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 100vw;
+  background-color: #99999999;
+}
+
+.wrapper {
+  min-width: 300px;
+  max-width: 100%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  position: absolute;
+  background-color: #fff;
+  padding: 10px 20px;
+  border-radius: 10px;
+}
+
+.wrapper > * {
+  margin-bottom: 20px;
+}
+.wrapper > *:last-child {
+  margin-bottom: 0;
+}
+.TieuDe {
+  font-weight: 700;
+  font-size: 1.2rem;
+}
+
+.BangChoDiem {
+  display: flex;
+  gap: 10px;
+  flex-direction: column;
+  padding: 0 3px;
+}
+.ThanhChoDiem {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.DaiDien {
+  border-radius: 50%;
+  font-weight: 700;
+  width: 30px;
+  aspect-ratio: 1/1;
+  background-color: black;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-grow: 0;
+  flex-shrink: 0;
+}
+
+.Ten {
+  flex-grow: 1;
+}
+
+.Diem {
+  border: none;
+  border-bottom: 1px solid black;
+  outline: none;
+  text-align: center;
+  padding: 3px 0;
+  flex-basis: 30px;
+  flex-grow: 0;
+  width: 60px;
+  font-size: 1rem;
+}
+
+.BinhLuan {
+  border: none;
+  border-bottom: 1px solid black;
+  outline: none;
+  width: 100%;
+  padding: 5px 3px;
+  font-size: 1rem;
+  color: #555;
+}
+
+.wrapper input:focus {
+  border-bottom-color: orange;
+  caret-color: orange;
+}
+
+.ButtonWrapper {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-evenly;
+  gap: 5px;
+}
+
+.Button__Dong, .Button__Luu {
+  min-width: 40%;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  border-radius: 20px;
+  padding: 5px 0;
+  font-weight: 700;
+  cursor: pointer;
+}
+.ButtonWrapper svg{
+    width: 1rem;
+}
+.Button__Dong{
+    background-color: black;
+    color: white;
+}
+.Button__Luu {
+    background-color: orange;
+}
+
+.winner {
+  border-bottom-color: green;
+  color: green;
+}
+
+.empty{
+  border-bottom-color: red;
+}
