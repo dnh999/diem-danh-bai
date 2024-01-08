@@ -7,16 +7,14 @@ import styles from "./index.module.css";
 import ButtonThemVanChoi from "./ButtonThemVanChoi";
 import ThemVanChoi from "./ThemVanChoi";
 
-type Props = {};
+type Props = {
+  troChoi: Array<ThongTinNguoiChoi>;
+};
 
 const ChiTietTroChoi = (props: Props) => {
-  const [nguoiChoi, setNguoiChoi] = useState<Array<ThongTinNguoiChoi>>([
-    { ten: "Duc", diem: 0 },
-    { ten: "Duc", diem: 0 },
-    { ten: "Duc", diem: 0 },
-    { ten: "Duc", diem: 0 },
-    { ten: "Duc", diem: 0 },
-  ]);
+  const [nguoiChoi, setNguoiChoi] = useState<Array<ThongTinNguoiChoi>>(
+    props.troChoi
+  );
 
   const [lichSuTroChoi, setLichSuTroChoi] = useState<Array<ThongTinVanChoi>>(
     []
@@ -32,7 +30,10 @@ const ChiTietTroChoi = (props: Props) => {
     setLichSuTroChoi((prev) => [
       {
         STT: prev.length + 1,
-        ThoiGian: `${now.getHours()}:${now.getMinutes()}`,
+        ThoiGian: `${now.getHours().toString().padStart(2, "0")}:${now
+          .getMinutes()
+          .toString()
+          .padStart(2, "0")}`,
         Diem: bangDiem,
       },
       ...prev,
