@@ -6,6 +6,7 @@ import ChiTietTroChoi from "@/components/ChiTietTroChoi";
 import CaiDatTroChoi from "@/components/CaiDatTroChoi";
 import { useState } from "react";
 import { ThongTinNguoiChoi } from "@/components/ChiTietTroChoi/ThanhTongDiem";
+import Layouts from "@/components/Layouts";
 
 export default function Home() {
   const [thongTinTroChoi, setThongTinTroChoi] = useState<
@@ -22,14 +23,17 @@ export default function Home() {
     // console.log(trochoi);
     setPlaying(true);
   };
-  
+
   return (
-    <main className={styles.main}>
-      {!playing ? (
-        <CaiDatTroChoi batDau={handleBatDau} />
-      ) : (
-        <ChiTietTroChoi troChoi={thongTinTroChoi} />
-      )}
-    </main>
+    <>
+      <Layouts playing={playing} setPlaying={()=>setPlaying(false)}/>
+      <main className={styles.main}>
+        {!playing ? (
+          <CaiDatTroChoi batDau={handleBatDau} />
+        ) : (
+          <ChiTietTroChoi troChoi={thongTinTroChoi} />
+        )}
+      </main>
+    </>
   );
 }

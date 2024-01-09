@@ -10,22 +10,27 @@ import ThemVanChoi from "./ThemVanChoi";
 type Props = {
   troChoi: Array<ThongTinNguoiChoi>;
 };
+export type ThongSoCaiDat = {
+  tuDongCong: boolean;
+};
 
 const ChiTietTroChoi = (props: Props) => {
-  const [nguoiChoi, setNguoiChoi] = useState<Array<ThongTinNguoiChoi>>(
+  const [_nguoiChoi, setNguoiChoi] = useState<Array<ThongTinNguoiChoi>>(
     props.troChoi
   );
 
-  const [lichSuTroChoi, setLichSuTroChoi] = useState<Array<ThongTinVanChoi>>(
+  const [_lichSuTroChoi, setLichSuTroChoi] = useState<Array<ThongTinVanChoi>>(
     []
   );
-  const [hienThemVanChoi, setHienThemVanChoi] = useState<boolean>(true);
+  const [_hienThemVanChoi, setHienThemVanChoi] = useState<boolean>(false);
+  const [_caiDat, setCaiDat] = useState<ThongSoCaiDat>({ tuDongCong: true });
 
   const handleClick__LUU = (bangDiem: Array<number>) => {
     console.log(bangDiem);
-    if (!bangDiem || nguoiChoi.length != bangDiem.length) {
+    if (!bangDiem || _nguoiChoi.length != bangDiem.length) {
       return;
     }
+    // ******** THÊM LỊCH SỬ ********
     const now = new Date();
     setLichSuTroChoi((prev) => [
       {
@@ -38,19 +43,28 @@ const ChiTietTroChoi = (props: Props) => {
       },
       ...prev,
     ]);
-    let nguoichoi = nguoiChoi.slice(0);
+    // ******** TÍNH TỔNG ĐIỂM ********
+    let nguoiChoi_clone = _nguoiChoi.slice(0);
     for (let i = 0; i < bangDiem.length; i++) {
-      nguoichoi[i].diem += bangDiem[i];
+      nguoiChoi_clone[i].diem += bangDiem[i];
     }
-    setNguoiChoi(nguoiChoi);
+    setNguoiChoi(nguoiChoi_clone);
+    // ******** TẮT DIALOG ********
     setHienThemVanChoi(false);
   };
-  
+
+  const handleCaiDat_Change = (caiDat: ThongSoCaiDat) => {
+    setCaiDat((prev) => ({ ...prev, ...caiDat }));
+    // console.log(caiDat);
+  };
+
   return (
     <div className={styles.container}>
-      <ThanhTongDiem BangDiem={nguoiChoi} />
+      {/* ******* SECTION TỔNG ĐIỂM ******** */}
+      <ThanhTongDiem BangDiem={_nguoiChoi} />
+      {/* ******* SECTION LỊCH SỬ ******** */}
       <div className={styles.LichSuChoi}>
-        {lichSuTroChoi.map((troChoi) => (
+        {_lichSuTroChoi.map((troChoi) => (
           <ThanhDiemVanChoi
             STT={troChoi.STT}
             ThoiGian={troChoi.ThoiGian}
@@ -59,12 +73,16 @@ const ChiTietTroChoi = (props: Props) => {
           />
         ))}
       </div>
+      {/* ******* BUTTON + ******** */}
       <ButtonThemVanChoi onClick={() => setHienThemVanChoi(true)} />
-      {hienThemVanChoi && (
+      {/* ******* DIALOG THÊM ĐIỂM VÁN CHƠI ******** */}
+      {_hienThemVanChoi && (
         <ThemVanChoi
-          nguoiChoi={nguoiChoi}
+          nguoiChoi={_nguoiChoi}
           onClick__LUU={handleClick__LUU}
           onClick__DONG={() => setHienThemVanChoi(false)}
+          onChange__CAIDAT={handleCaiDat_Change}
+          tuDongCong_Value={_caiDat.tuDongCong}
         />
       )}
     </div>

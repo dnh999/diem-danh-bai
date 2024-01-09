@@ -1,0 +1,37 @@
+.container {
+  height: var(--nav-bar-height);
+  background-color: var(--nav-bar-background-color);
+  color: var(--nav-bar-color);
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 0 20px;
+  gap: 20px;
+}
+
+/* .container * {
+  color: white;
+} */
+.DieuHuongButton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.DieuHuongButton svg {
+  height: 1rem;
+  height: 1.2lh;
+}
+.TieuDe{
+    flex: 1;
+}
+.CaiDat {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.CaiDat svg {
+  height: 1rem;
+  height: 1lh;
+}

@@ -2,7 +2,7 @@
   position: absolute;
   top: 0;
   left: 0;
-  height: 100vh;
+  height: var(--aria-content-height);
   width: 100vw;
   background-color: #99999999;
 }
@@ -42,6 +42,7 @@
   align-items: center;
   justify-content: space-between;
   gap: 10px;
+  position: relative;
 }
 
 .DaiDien {
@@ -73,15 +74,24 @@
   width: 60px;
   font-size: 1rem;
 }
-
-.BinhLuan {
-  /* border: none;
-  border-bottom: 1px solid black;
-  outline: none; */
-  width: 100%;
-  padding: 5px 3px;
-  font-size: 1rem;
-  color: #555;
+/* .Button_Xoa {
+  height: 1rem;
+  height: 0.7lh;
+  visibility: hidden;
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  color: orange;
+}
+.Diem:focus + .Button_Xoa {
+  visibility: visible;
+} */
+.CaiDat {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 10px;
 }
 
 /* .wrapper input:focus {
@@ -97,7 +107,8 @@
   gap: 5px;
 }
 
-.Button__Dong, .Button__Luu {
+.Button__Dong,
+.Button__Luu {
   min-width: 40%;
   display: flex;
   align-items: center;
@@ -107,15 +118,16 @@
   font-weight: 700;
   cursor: pointer;
 }
-.ButtonWrapper svg{
-    width: 1rem;
+.ButtonWrapper svg {
+  height: 1rem;
+  height: 1lh;
 }
-.Button__Dong{
-    background-color: black;
-    color: white;
+.Button__Dong {
+  background-color: black;
+  color: white;
 }
 .Button__Luu {
-    background-color: orange;
+  background-color: orange;
 }
 
 .winner {
@@ -123,6 +135,6 @@
   color: green;
 }
 
-.empty{
+.empty {
   border-bottom-color: red;
 }
