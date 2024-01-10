@@ -1,0 +1,21 @@
+.container {
+  margin-bottom: 10px;
+}
+.container:last-child {
+  margin-bottom: 0;
+}
+.Header {
+  height: 35px;
+  display: flex;
+  align-items: center;
+  background-color: var(--lich-su-bar-head-backgound-color);
+  padding: 0 5px;
+  font-weight: 700;
+  font-size: 1rem;
+}
+
+.DanhSachLichSu {
+  display: flex;
+  gap: 1px;
+  flex-direction: column;
+}

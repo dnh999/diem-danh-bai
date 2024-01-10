@@ -1,20 +1,26 @@
+"use client";
+
 import React from "react";
 import styles from "./index.module.css";
 
 type Props = {
-  DieuHuongButton?: JSX.Element;
+  DieuHuongIcon?: JSX.Element;
+  onClick_DieuHuongButton?: Function;
   TieuDeText?: string;
 };
 
 const Navbar = (props: Props) => {
   return (
     <div className={styles.container}>
-      <div className={styles.DieuHuongButton}>
-        {!props.DieuHuongButton ? (
-          <></>
-        ) : (
-          props.DieuHuongButton
-        )}
+      <div
+        className={styles.DieuHuongButton}
+        onClick={() =>
+          props.onClick_DieuHuongButton
+            ? props.onClick_DieuHuongButton()
+            : () => {}
+        }
+      >
+        {!props.DieuHuongIcon ? <></> : props.DieuHuongIcon}
       </div>
       <div className={styles.TieuDe}>{props.TieuDeText}</div>
       {/* <div className={styles.CaiDat}>

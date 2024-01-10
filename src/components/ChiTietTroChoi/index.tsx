@@ -4,8 +4,8 @@ import React, { useState } from "react";
 import ThanhTongDiem, { ThongTinNguoiChoi } from "./ThanhTongDiem";
 import ThanhDiemVanChoi, { ThongTinVanChoi } from "./ThanhDiemVanChoi";
 import styles from "./index.module.css";
-import ButtonThemVanChoi from "./ButtonThemVanChoi";
 import ThemVanChoi from "./ThemVanChoi";
+import ButtonThemVanChoi from "../ButtonThemVanChoi";
 
 type Props = {
   troChoi: Array<ThongTinNguoiChoi>;

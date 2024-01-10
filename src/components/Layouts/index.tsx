@@ -6,7 +6,7 @@ import Navbar from "@/components/Layouts/Navbar";
 
 type Props = {
   playing?: boolean;
-  setPlaying: Function;
+  setPlaying?: Function;
 };
 
 const Layouts = (props: Props) => {
@@ -32,7 +32,7 @@ const Layouts = (props: Props) => {
       viewBox="0 0 24 24"
       fill="currentColor"
       className="w-6 h-6"
-      onClick={() => props.setPlaying()}
+      onClick={() => (props.setPlaying ? props.setPlaying() : () => {})}
     >
       <path
         fillRule="evenodd"
@@ -45,7 +45,7 @@ const Layouts = (props: Props) => {
     <div>
       <Navbar
         TieuDeText={!props.playing ? "Tạo trò chơi" : "Chi tiết trò chơi"}
-        DieuHuongButton={!props.playing ? MenuButton : BackButton}
+        DieuHuongIcon={!props.playing ? MenuButton : BackButton}
       />
       {hienSidebar && <Sidebar />}
     </div>

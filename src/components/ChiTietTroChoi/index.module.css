@@ -6,7 +6,7 @@
 
 .LichSuChoi {
   background: #cccccccc;
-  height: calc(var(--aria-content-height) - 130px);
+  height: calc(var(--aria-content-height) - 122px);
   /* padding: 1px 0; */
   overflow: auto;
 }

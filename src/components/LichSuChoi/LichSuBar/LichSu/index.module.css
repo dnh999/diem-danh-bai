@@ -1,0 +1,23 @@
+.container{
+    position: relative;
+    padding: 5px 0 10px;
+}
+.container:nth-child(2n+1){
+    background-color: #cccc;
+}
+.thoiGian{
+    font-size: 0.8rem;
+    width: max-content;
+    min-width: 3rem;
+    background-color: #555;
+    text-align: center;
+    padding: 3px 5px;
+    color: white;
+    margin-bottom: 3px;
+}
+.danhSachNguoiChoi{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly;
+}

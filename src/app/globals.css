@@ -4,6 +4,10 @@
   --nav-bar-color: white;
 
   --aria-content-height: calc(100dvh - var(--nav-bar-height));
+
+  --button-background-color: #e29741;
+  
+  --lich-su-bar-head-backgound-color: #e9891b;
 }
 
 @media (prefers-color-scheme: dark) {

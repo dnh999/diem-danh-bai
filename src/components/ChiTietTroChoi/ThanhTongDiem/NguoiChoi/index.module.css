@@ -27,7 +27,7 @@
   text-align: center;
 }
 
-.DaiDien {
+.anhDaiDien {
   text-align: center;
   display: flex;
   align-items: center;
@@ -37,6 +37,6 @@
   color: white;
   font-weight: 700;
   font-size: 1rem;
-  width: 40px;
+  width: 2rem;
   aspect-ratio: 1/1;
 }

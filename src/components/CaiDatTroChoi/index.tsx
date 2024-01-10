@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import styles from "./index.module.css";
 
 type Props = {
-    batDau: Function;
+  onClick_batDau: Function;
 };
 
 const CaiDatTroChoi = (props: Props) => {
@@ -15,14 +15,9 @@ const CaiDatTroChoi = (props: Props) => {
     setDanhSach(prev);
   };
   const handleBatDau = () => {
-    const danhSachMoi = danhsach
-      .reduce((prev, cur) => {
-        if (cur === "") return prev;
-        else return prev + "|" + cur;
-      })
-      .split("|");
-    // console.log(danhSachMoi);
-    props.batDau(danhSachMoi);
+    const danhSachMoi = danhsach.filter((value) => value);
+    // console.log(danhsach, danhSachMoi);
+    props.onClick_batDau(danhSachMoi);
   };
   return (
     <div className={styles.container}>

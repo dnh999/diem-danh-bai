@@ -8,7 +8,7 @@ import { useState } from "react";
 import { ThongTinNguoiChoi } from "@/components/ChiTietTroChoi/ThanhTongDiem";
 import Layouts from "@/components/Layouts";
 
-export default function Home() {
+export default function TaoTroChoiPage() {
   const [thongTinTroChoi, setThongTinTroChoi] = useState<
     Array<ThongTinNguoiChoi>
   >([]);
@@ -26,10 +26,15 @@ export default function Home() {
 
   return (
     <>
-      <Layouts playing={playing} setPlaying={()=>setPlaying(false)}/>
       <main className={styles.main}>
+        <Layouts
+          playing={playing}
+          setPlaying={() => {
+            if (confirm("Thoát?")) setPlaying(false);
+          }}
+        />
         {!playing ? (
-          <CaiDatTroChoi batDau={handleBatDau} />
+          <CaiDatTroChoi onClick_batDau={handleBatDau} />
         ) : (
           <ChiTietTroChoi troChoi={thongTinTroChoi} />
         )}
